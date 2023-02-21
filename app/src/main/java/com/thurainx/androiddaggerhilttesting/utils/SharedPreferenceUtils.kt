@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 
 const val PREF_NAME = "TEMPORARY_DB"
 class SharedPreferenceUtils(context: Context) {
-    var sharedPref: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+    private var sharedPref: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
 
     fun saveString(key: String, value: String){
@@ -27,7 +27,7 @@ class SharedPreferenceUtils(context: Context) {
     }
 
     fun getInt(key: String) : Int{
-        return sharedPref.getInt(key, -1)
+        return sharedPref.getInt(key, 0)
     }
 
     fun deleteSharedPreference(){
