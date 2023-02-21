@@ -8,6 +8,7 @@ import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.AnticipateInterpolator
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.core.animation.doOnEnd
@@ -59,8 +60,8 @@ class MainActivity : AppCompatActivity(), MainView {
         mPresenter.onUiReady(this, this)
     }
 
-    override fun initializationComplete() {
-
+    override fun initializationComplete(value: String) {
+        Toast.makeText(this,"count: $value", Toast.LENGTH_SHORT).show()
     }
 
     override fun showErrorMessage(message: String) {
