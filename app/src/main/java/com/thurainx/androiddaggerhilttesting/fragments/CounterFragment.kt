@@ -8,8 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import com.thurainx.androiddaggerhilttesting.R
 import com.thurainx.androiddaggerhilttesting.databinding.FragmentCounterBinding
+import com.thurainx.androiddaggerhilttesting.mvp.views.MainView
+import com.thurainx.androiddaggerhilttesting.utils.SharedPreferenceUtils
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.scopes.FragmentScoped
+import javax.inject.Inject
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,11 +24,14 @@ private const val ARG_PARAM2 = "param2"
  * Use the [CounterFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-
-class CounterFragment : Fragment() {
+@AndroidEntryPoint
+class CounterFragment : Fragment(){
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    @Inject
+    lateinit var mPref: SharedPreferenceUtils
 
     private var binding: FragmentCounterBinding? = null
 
@@ -48,6 +54,18 @@ class CounterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setUpListeners()
+    }
+
+    private fun setUpListeners(){
+        binding?.tvCounter?.text = mPref.getInt("count").toString()
+        binding?.fabCounterAdd?.setOnClickListener {
+            val count = mPref.getInt("count")
+            mPref.saveInt("count",count + 1)
+
+            val count2 = mPref.getInt("count")
+            binding?.tvCounter?.text = count2.toString()
+        }
     }
 
     override fun onStart() {

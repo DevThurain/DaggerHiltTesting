@@ -11,6 +11,8 @@ import android.util.Log
 import android.view.View
 import android.view.ViewTreeObserver
 import android.view.animation.AnticipateInterpolator
+import android.widget.CompoundButton
+import android.widget.RadioGroup.OnCheckedChangeListener
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
@@ -23,9 +25,11 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.color.DynamicColors
+import com.mikepenz.materialdrawer.holder.StringHolder
 import com.mikepenz.materialdrawer.model.NavigationDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
+import com.mikepenz.materialdrawer.model.ToggleDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.descriptionText
 import com.mikepenz.materialdrawer.model.interfaces.iconRes
 import com.mikepenz.materialdrawer.model.interfaces.nameText
@@ -130,7 +134,8 @@ class MainActivity : AppCompatActivity(), MainView {
                         iconRes = R.drawable.ic_test;
                         nameText = "Testing Two";
                         identifier = 3;
-                        isSelectable = true
+                        isSelectable = true;
+                        isSelectedBackgroundAnimated = true;
                     }),
             )
             setSavedInstance(savedInstanceState)
@@ -180,12 +185,12 @@ class MainActivity : AppCompatActivity(), MainView {
 
     }
 
-//    override fun onSaveInstanceState(_outState: Bundle) {
-//        var outState = _outState
-//        //add the values which need to be saved from the drawer to the bundle
-//        outState = binding.slider.saveInstanceState(outState)
-//        super.onSaveInstanceState(outState)
-//    }
+    override fun onSaveInstanceState(_outState: Bundle) {
+        var outState = _outState
+        //add the values which need to be saved from the drawer to the bundle
+        outState = binding.slider.saveInstanceState(outState)
+        super.onSaveInstanceState(outState)
+    }
 
     private fun setUpBackPressed() {
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {

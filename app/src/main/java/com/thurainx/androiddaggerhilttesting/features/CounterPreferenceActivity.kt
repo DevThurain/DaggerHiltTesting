@@ -20,17 +20,17 @@ class CounterPreferenceActivity : AppCompatActivity() {
         binding = ActivityCounterPreferenceBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setUpListeners()
+//        setUpListeners()
     }
 
-    private fun setUpListeners(){
-        binding.tvCounter.text = mPref.getInt("count").toString()
-        binding.fabCounterAdd.setOnClickListener {
-            val count = mPref.getInt("count")
-            mPref.saveInt("count",count + 1)
-
-            val count2 = mPref.getInt("count")
-            binding.tvCounter.text = count2.toString()
-        }
-    }
+//    private fun setUpListeners(){
+//        binding.tvCounter.text = mPref.getInt("count").toString()
+//        binding.fabCounterAdd.setOnClickListener {
+//            val count = mPref.getInt("count")
+//            mPref.saveInt("count",count + 1)
+//
+//            val count2 = mPref.getInt("count")
+//            binding.tvCounter.text = count2.toString()
+//        }
+//    }
 }

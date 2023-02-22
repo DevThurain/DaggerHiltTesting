@@ -28,10 +28,11 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
+        <item name="android:navigationBarColor">?colorSurface</item>
         <!-- Customize your theme here. -->
 
         <!-- Splash Animation -->
-        <item name="android:windowSplashScreenBackground">#03A9F4</item>
+        <item name="android:windowSplashScreenBackground">?colorSurface</item>
         <item name="android:windowSplashScreenAnimationDuration">2000</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/avd_logo</item>
 
