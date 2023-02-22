@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/navCounterFragment">
+
+    <fragment
+        android:id="@+id/navCounterFragment"
+        android:name="com.thurainx.androiddaggerhilttesting.fragments.CounterFragment"
+        android:label="fragment_counter"
+        tools:layout="@layout/fragment_counter" />
+    <fragment
+        android:id="@+id/navTestingOneFragment"
+        android:name="com.thurainx.androiddaggerhilttesting.fragments.TestingOneFragment"
+        android:label="fragment_testing_one"
+        tools:layout="@layout/fragment_testing_one" />
+    <fragment
+        android:id="@+id/navTestingTwoFragment"
+        android:name="com.thurainx.androiddaggerhilttesting.fragments.TestingTwoFragment"
+        android:label="fragment_testing_two"
+        tools:layout="@layout/fragment_testing_two" />
+</navigation>
