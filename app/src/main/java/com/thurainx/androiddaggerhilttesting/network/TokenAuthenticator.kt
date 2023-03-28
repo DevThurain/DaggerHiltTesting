@@ -17,7 +17,6 @@ class TokenAuthenticator : Authenticator {
             if(result.isSuccessful){
                 return@runBlocking response.request.newBuilder()
                     .url("https://1044f083-8562-4c64-be84-8919acf4d43d.mock.pstmn.io/health")
-                    .addHeader("x-mock-response-code","200")
                     .build()
             }else{
                return@runBlocking null

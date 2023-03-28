@@ -17,6 +17,5 @@ interface AppApi {
     suspend fun refreshToken(): Response<TokenResult>
 
     @GET("/login")
-    @Headers("x-mock-response-code: 401")
     suspend fun login(): Response<LoginResult>
 }
