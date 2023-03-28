@@ -119,12 +119,21 @@ class MainActivity : AppCompatActivity(), MainView {
                         isSelected = true
                     }),
                 NavigationDrawerItem(
+                    R.id.navDoubleTokenFragment,
+                    PrimaryDrawerItem().apply {
+                        isIconTinted = true;
+                        iconRes = R.drawable.ic_api
+                        nameText = "Double Token Api";
+                        identifier = 2;
+                        isSelectable = true ;
+                    }),
+                NavigationDrawerItem(
                     R.id.navTestingOneFragment,
                     PrimaryDrawerItem().apply {
                         isIconTinted = true;
                         iconRes = R.drawable.ic_test
                         nameText = "Testing One";
-                        identifier = 2;
+                        identifier = 3;
                         isSelectable = true ;
                     }),
                 NavigationDrawerItem(
@@ -133,7 +142,7 @@ class MainActivity : AppCompatActivity(), MainView {
                         isIconTinted = true;
                         iconRes = R.drawable.ic_test;
                         nameText = "Testing Two";
-                        identifier = 3;
+                        identifier = 4;
                         isSelectable = true;
                         isSelectedBackgroundAnimated = true;
                     }),

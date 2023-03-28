@@ -20,4 +20,9 @@
         android:name="com.thurainx.androiddaggerhilttesting.fragments.TestingTwoFragment"
         android:label="fragment_testing_two"
         tools:layout="@layout/fragment_testing_two" />
+    <fragment
+        android:id="@+id/navDoubleTokenFragment"
+        android:name="com.thurainx.androiddaggerhilttesting.fragments.DoubleTokenFragment"
+        android:label="fragment_double_token"
+        tools:layout="@layout/fragment_double_token" />
 </navigation>
